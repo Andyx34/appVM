@@ -1,6 +1,6 @@
 package com.example.appvm.model
 
-data class CrediCardResponse(
+data class CreditCardResponse(
     val id:Int,
     val vid:String,
     val credi_card_number:String,
