@@ -27,16 +27,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            AppVMTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    CreditCardScreen(viewModel)
-                }
+            CreditCardScreen(viewModel)
             }
         }
-    }
+
 
 
     @Composable

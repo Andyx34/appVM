@@ -45,17 +45,17 @@ fun CreditCardItem(creditCard:CreditCardResponse){
                 .fillMaxWidth()
         ) {
             Text(
-                text = creditCard.credi_card_number,
+                text = creditCard.credit_card_number,
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text ="Expiry Date: ${creditCard.credi_card_expiry_date}",
+                text ="Expiry Date: ${creditCard.credit_card_expiry_date}",
                 style = MaterialTheme.typography.bodyLarge
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text =creditCard.credi_card_expiry_date,
+                text =creditCard.credit_card_expiry_date,
                 style = MaterialTheme.typography.bodyLarge)
 
         }
