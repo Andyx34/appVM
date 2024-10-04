@@ -22,7 +22,7 @@ import com.example.appvm.viewModel.CreditCardViewModel
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
-    private val viewModel:CreditCardViewModel by viewModels()
+    private val viewModel: CreditCardViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -35,37 +35,34 @@ class MainActivity : ComponentActivity() {
                     CreditCardScreen(viewModel)
                 }
             }
-
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
         }
     }
 
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier, viewModel: GreetingViewModel = androidx.lifecycle.viewmodel.compose.viewModel()) {
+    @Composable
+    fun Greeting(
+        name: String,
+        modifier: Modifier = Modifier,
+        viewModel: GreetingViewModel = androidx.lifecycle.viewmodel.compose.viewModel()
+    ) {
 
-    val randomFromVM =viewModel.randomvm
-    val random:Int= Random.nextInt(0,2023)
+        val randomFromVM = viewModel.randomvm
+        val random: Int = Random.nextInt(0, 2023)
 
-    Log.d("Random","From ViewModel: ${randomFromVM.value}")
-    Log.d("Random","From Local composable´s scope: $random")
+        Log.d("Random", "From ViewModel: ${randomFromVM.value}")
+        Log.d("Random", "From Local composable´s scope: $random")
 
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AppVMTheme {
-        Greeting("Android")
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        AppVMTheme {
+            Greeting("Android")
+        }
     }
 }
